@@ -16,6 +16,13 @@ If you are using a forked version of the blumilk codestyle, add the repository t
 ]
 
 ```
+And  change codestyle version to the forked branch in your composer.json:
+
+```json
+"require-dev": {
+    "blumilk/codestyle": "dev-forked-branch"
+}
+```
 
 Then run following to create configuration file and add scripts to the `composer.json` file:
 ```shell
