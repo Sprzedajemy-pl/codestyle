@@ -200,7 +200,7 @@ class CommonRules extends Rules
         CastSpacesFixer::class => [
             "space" => "none",
         ],
-        DoubleQuoteFixer::class => true,
+        DoubleQuoteFixer::class => false,
         VoidReturnFixer::class => true,
         UseArrowFunctionsFixer::class => true,
         FullyQualifiedStrictTypesFixer::class => [
