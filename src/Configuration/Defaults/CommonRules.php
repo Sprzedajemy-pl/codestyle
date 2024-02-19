@@ -99,6 +99,7 @@ use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
 use PhpCsFixer\Fixer\Strict\StrictParamFixer;
 use PhpCsFixer\Fixer\StringNotation\SimpleToComplexStringVariableFixer;
+use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
 use PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer;
 use PhpCsFixer\Fixer\Whitespace\BlankLineBetweenImportGroupsFixer;
@@ -201,6 +202,7 @@ class CommonRules extends Rules
             "space" => "none",
         ],
         DoubleQuoteFixer::class => false,
+        SingleQuoteFixer::class => true,
         VoidReturnFixer::class => true,
         UseArrowFunctionsFixer::class => true,
         FullyQualifiedStrictTypesFixer::class => [
