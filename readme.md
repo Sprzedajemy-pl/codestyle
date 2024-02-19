@@ -11,7 +11,7 @@ If you are using a forked version of the blumilk codestyle, add the repository t
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/Sprzedajemy-pl/codestyle"
+        "url": "https://github.com/sprzedajemy-pl/codestyle"
     }
 ]
 
