@@ -1,17 +1,26 @@
-[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/blumilksoftware/codestyle?style=for-the-badge)](https://packagist.org/packages/blumilksoftware/codestyle)
-[![Packagist Version](https://img.shields.io/packagist/v/blumilksoftware/codestyle?style=for-the-badge)](https://packagist.org/packages/blumilksoftware/codestyle)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/blumilksoftware/codestyle?style=for-the-badge)](https://packagist.org/packages/blumilksoftware/codestyle/stats)
+## Code Style package
 
-![Logo](./logo.png)
-
-## blumilksoftware/codebase
-A common codestyle helper for all Blumilk projects.
+A common codestyle helper for all sprzedajemy projects based on the [blumilk codestyle](https://github.com/blumilksoftware/codestyle).
 
 ### Usage
 Add package to our project:
-```shell
-composer require blumilksoftware/codestyle --dev
+
+Add the Forked Repository:
+If you are using a forked version of the blumilk codestyle, add the repository to your composer.json:
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/Sprzedajemy-pl/codestyle"
+    }
+]
+
 ```
+Require the Package:
+   Install the package using Composer:
+```shell
+composer require sprzedajemy-pl/codestyle:main
+````
 
 Then run following to create configuration file and add scripts to the `composer.json` file:
 ```shell

@@ -1,6 +1,6 @@
 {
-  "name": "blumilksoftware/codestyle",
-  "description": "Blumilk codestyle configurator",
+  "name": "Sprzedajemy-pl/codestyle",
+  "description": "Sprzedajemy-pl codestyle",
   "license": "MIT",
   "type": "library",
   "require": {
