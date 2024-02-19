@@ -11,16 +11,11 @@ If you are using a forked version of the blumilk codestyle, add the repository t
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/sprzedajemy-pl/codestyle"
+        "url": "https://github.com/Sprzedajemy-pl/codestyle"
     }
 ]
 
 ```
-Require the Package:
-   Install the package using Composer:
-```shell
-composer require sprzedajemy-pl/codestyle:main
-````
 
 Then run following to create configuration file and add scripts to the `composer.json` file:
 ```shell
