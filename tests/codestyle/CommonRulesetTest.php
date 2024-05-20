@@ -38,6 +38,7 @@ class CommonRulesetTest extends CodestyleTestCase
             ["noMultilineWhitespaceAroundDoubleArrow"],
             ["compactArray"],
             ["classesImport"],
+            ["namedParameters"],
             ["spacesInsideParentheses"],
             ["orderedClassElements"],
         ];

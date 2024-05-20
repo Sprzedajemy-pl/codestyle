@@ -18,7 +18,6 @@ use PhpCsFixer\Fixer\Basic\BracesPositionFixer;
 use PhpCsFixer\Fixer\Basic\NoMultipleStatementsPerLineFixer;
 use PhpCsFixer\Fixer\Basic\NoTrailingCommaInSinglelineFixer;
 use PhpCsFixer\Fixer\Basic\PsrAutoloadingFixer;
-use PhpCsFixer\Fixer\Casing\ConstantCaseFixer;
 use PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer;
 use PhpCsFixer\Fixer\Casing\LowercaseStaticReferenceFixer;
 use PhpCsFixer\Fixer\Casing\MagicConstantCasingFixer;
@@ -89,7 +88,6 @@ use PhpCsFixer\Fixer\Phpdoc\PhpdocTrimFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocVarWithoutNameFixer;
 use PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer;
-use PhpCsFixer\Fixer\PhpUnit\PhpUnitAttributesFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitSetUpTearDownVisibilityFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer;
@@ -113,7 +111,6 @@ use PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer;
 use PhpCsFixer\Fixer\Whitespace\NoSpacesAroundOffsetFixer;
 use PhpCsFixer\Fixer\Whitespace\NoWhitespaceInBlankLineFixer;
 use PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer;
-use PhpCsFixer\Fixer\Whitespace\SpacesInsideParenthesesFixer;
 use PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\TypeDeclarationSpacesFixer;
 use PhpCsFixerCustomFixers\Fixer\CommentedOutFunctionFixer;
@@ -155,31 +152,7 @@ class CommonRules extends Rules
         SelfAccessorFixer::class => true,
         MagicConstantCasingFixer::class => true,
         NoUselessElseFixer::class => true,
-        OrderedClassElementsFixer::class => [
-            "order" => [
-                "use_trait",
-                "case",
-                "constant_public",
-                "constant_protected",
-                "constant_private",
-                "property_public_static",
-                "property_protected_static",
-                "property_private_static",
-                "property_public",
-                "property_protected",
-                "property_private",
-                "construct",
-                "destruct",
-                "magic",
-                "phpunit",
-                "method_public_static",
-                "method_public",
-                "method_protected_static",
-                "method_protected",
-                "method_private_static",
-                "method_private",
-            ],
-        ],
+        OrderedClassElementsFixer::class => true,
         NoTrailingWhitespaceInCommentFixer::class => true,
         PhpdocTrimConsecutiveBlankLineSeparationFixer::class => true,
         PhpdocTrimFixer::class => true,
@@ -369,8 +342,5 @@ class CommonRules extends Rules
         ClassKeywordFixer::class => true,
         NamedArgumentFixer::class => true,
         NoBlankLinesAfterPhpdocFixer::class => true,
-        ConstantCaseFixer::class => true,
-        PhpUnitAttributesFixer::class => true,
-        SpacesInsideParenthesesFixer::class => true,
-    ];
+   ];
 }

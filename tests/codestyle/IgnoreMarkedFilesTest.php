@@ -22,6 +22,7 @@ class IgnoreMarkedFilesTest extends CodestyleTestCase
     }
 
     /**
+     * @dataProvider providePhp80Fixtures
      * @throws Exception
      */
     protected function testFixture(string $name): void

@@ -30,10 +30,10 @@ class Config
     protected Rules $rules;
     protected string $rootPath;
     protected bool $withRiskyFixers = true;
-    protected bool $withCache = true;
-    protected bool $withParallelRun = true;
-    protected ?ParallelConfig $customParallelRunConfig = null;
     protected bool $ignoreMarkedFiles = false;
+    protected bool $withParallelRun = true;
+    protected bool $withCache = true;
+    protected ?ParallelConfig $customParallelRunConfig = null;
 
     public function __construct(
         ?Paths $paths = null,
@@ -107,6 +107,13 @@ class Config
         return $this;
     }
 
+    public function ignoreMarkedFiles(): static
+    {
+        $this->ignoreMarkedFiles = true;
+
+        return $this;
+    }
+
     public function withCache(): static
     {
         $this->withCache = true;
@@ -139,13 +146,6 @@ class Config
     {
         $this->withParallelRun();
         $this->customParallelRunConfig = $config;
-
-        return $this;
-    }
-
-    public function ignoreMarkedFiles(): static
-    {
-        $this->ignoreMarkedFiles = true;
 
         return $this;
     }
