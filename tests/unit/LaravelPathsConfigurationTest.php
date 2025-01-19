@@ -14,8 +14,8 @@ class LaravelPathsConfigurationTest extends TestCase
         $config = new Config(paths: $paths);
 
         $this->assertSame(
-            ["app", "bootstrap/app.php", "bootstrap/providers.php", "config", "database", "lang", "public/index.php", "routes", "tests"],
-            $config->options()["paths"],
+            ['app', 'bootstrap/app.php', 'bootstrap/providers.php', 'config', 'database', 'lang', 'public/index.php', 'routes', 'tests'],
+            $config->options()['paths'],
         );
     }
 
@@ -25,8 +25,8 @@ class LaravelPathsConfigurationTest extends TestCase
         $config = new Config(paths: $paths);
 
         $this->assertSame(
-            ["app", "bootstrap/app.php", "config", "database", "public/index.php", "resources/lang", "routes", "tests"],
-            $config->options()["paths"],
+            ['app', 'bootstrap/app.php', 'config', 'database', 'public/index.php', 'resources/lang', 'routes', 'tests'],
+            $config->options()['paths'],
         );
     }
 
@@ -36,27 +36,27 @@ class LaravelPathsConfigurationTest extends TestCase
         $config = new Config(paths: $paths);
 
         $this->assertSame(
-            ["app", "bootstrap/app.php", "config", "database", "lang", "public/index.php", "routes", "tests"],
-            $config->options()["paths"],
+            ['app', 'bootstrap/app.php', 'config', 'database', 'lang', 'public/index.php', 'routes', 'tests'],
+            $config->options()['paths'],
         );
     }
 
     public function testFilteredLaravelPathsConfiguration(): void
     {
         $paths = new LaravelPaths();
-        $config = new Config(paths: $paths->filter("lang"));
+        $config = new Config(paths: $paths->filter('lang'));
 
         $this->assertSame(
-            ["app", "bootstrap/app.php", "bootstrap/providers.php", "config", "database", "public/index.php", "routes", "tests"],
-            $config->options()["paths"],
+            ['app', 'bootstrap/app.php', 'bootstrap/providers.php', 'config', 'database', 'public/index.php', 'routes', 'tests'],
+            $config->options()['paths'],
         );
     }
 
     public function testClearedLaravelPathsConfiguration(): void
     {
         $paths = new LaravelPaths();
-        $config = new Config(paths: $paths->clear()->add("src"));
+        $config = new Config(paths: $paths->clear()->add('src'));
 
-        $this->assertSame(["src"], $config->options()["paths"]);
+        $this->assertSame(['src'], $config->options()['paths']);
     }
 }

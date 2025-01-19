@@ -30,7 +30,7 @@ if (floatval($percentage) >= (float)$this->option("threshold")) {
 EOF;
 
         return new FixerDefinition(
-            "Fix named arguments formatting.",
+            'Fix named arguments formatting.',
             [
                 new CodeSample($codeSample),
             ],
@@ -39,7 +39,7 @@ EOF;
 
     public function getName(): string
     {
-        return "Blumilk/named_arguments";
+        return 'Blumilk/named_arguments';
     }
 
     public function getPriority(): int
@@ -81,10 +81,10 @@ EOF;
                     }
                 }
             } elseif ($token->isGivenKind(CT::T_NAMED_ARGUMENT_COLON)) {
-                if ($tokens[$index + 1]->isWhitespace() && $tokens[$index + 1]->getContent() !== " ") {
-                    $tokens[$index + 1] = new Token([T_WHITESPACE, " "]);
+                if ($tokens[$index + 1]->isWhitespace() && $tokens[$index + 1]->getContent() !== ' ') {
+                    $tokens[$index + 1] = new Token([T_WHITESPACE, ' ']);
                 } elseif (!$tokens[$index + 1]->isWhitespace()) {
-                    $tokens->insertAt($index + 1, new Token([T_WHITESPACE, " "]));
+                    $tokens->insertAt($index + 1, new Token([T_WHITESPACE, ' ']));
                 }
             }
         }

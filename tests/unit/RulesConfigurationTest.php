@@ -25,10 +25,10 @@ class RulesConfigurationTest extends TestCase
 
         $this->assertSame(
             [
-                "no_whitespace_before_comma_in_array" => true,
-                "array_indentation" => true,
+                'no_whitespace_before_comma_in_array' => true,
+                'array_indentation' => true,
             ],
-            $config->options()["rules"],
+            $config->options()['rules'],
         );
     }
 
@@ -42,7 +42,7 @@ class RulesConfigurationTest extends TestCase
         };
         $config = new Config(rules: $rules->clear());
 
-        $this->assertSame([], $config->options()["rules"]);
+        $this->assertSame([], $config->options()['rules']);
     }
 
     public function testFilteringRulesConfiguration(): void
@@ -57,9 +57,9 @@ class RulesConfigurationTest extends TestCase
 
         $this->assertSame(
             [
-                "array_indentation" => true,
+                'array_indentation' => true,
             ],
-            $config->options()["rules"],
+            $config->options()['rules'],
         );
     }
 
@@ -78,11 +78,11 @@ class RulesConfigurationTest extends TestCase
 
         $this->assertSame(
             [
-                "no_whitespace_before_comma_in_array" => true,
-                "array_indentation" => true,
-                "trim_array_spaces" => true,
+                'no_whitespace_before_comma_in_array' => true,
+                'array_indentation' => true,
+                'trim_array_spaces' => true,
             ],
-            $config->options()["rules"],
+            $config->options()['rules'],
         );
     }
 
@@ -97,7 +97,7 @@ class RulesConfigurationTest extends TestCase
         $rule = new Rule(
             NoMixedEchoPrintFixer::class,
             [
-                "use" => "echo",
+                'use' => 'echo',
             ],
         );
 
@@ -107,13 +107,13 @@ class RulesConfigurationTest extends TestCase
 
         $this->assertSame(
             [
-                "no_whitespace_before_comma_in_array" => true,
-                "array_indentation" => true,
-                "no_mixed_echo_print" => [
-                    "use" => "echo",
+                'no_whitespace_before_comma_in_array' => true,
+                'array_indentation' => true,
+                'no_mixed_echo_print' => [
+                    'use' => 'echo',
                 ],
             ],
-            $config->options()["rules"],
+            $config->options()['rules'],
         );
     }
 }

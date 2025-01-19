@@ -13,34 +13,34 @@ class CommonRulesetTest extends CodestyleTestCase
     public static function providePhp80Fixtures(): array
     {
         return [
-            ["noExtraBlankLines"],
-            ["nullableTypeForDefaultNull"],
-            ["operatorSpacing"],
-            ["singleQuotes"],
-            ["strictTypes"],
-            ["trailingCommas"],
-            ["unionTypes"],
-            ["references"],
-            ["classAttributesSeparation"],
-            ["uselessParenthesis"],
-            ["laravelMigrations"],
-            ["phpdocs"],
-            ["yodaStyle"],
-            ["objectOperators"],
-            ["anonymousFunctions"],
-            ["namespaces"],
-            ["emptyLines"],
-            ["importsOrder"],
-            ["blankLineBeforeStatement"],
-            ["braces"],
-            ["stringVariables"],
-            ["lowercaseKeywords"],
-            ["noMultilineWhitespaceAroundDoubleArrow"],
-            ["compactArray"],
-            ["classesImport"],
-            ["namedParameters"],
-            ["spacesInsideParentheses"],
-            ["orderedClassElements"],
+            ['noExtraBlankLines'],
+            ['nullableTypeForDefaultNull'],
+            ['operatorSpacing'],
+            ['singleQuotes'],
+            ['strictTypes'],
+            ['trailingCommas'],
+            ['unionTypes'],
+            ['references'],
+            ['classAttributesSeparation'],
+            ['uselessParenthesis'],
+            ['laravelMigrations'],
+            ['phpdocs'],
+            ['yodaStyle'],
+            ['objectOperators'],
+            ['anonymousFunctions'],
+            ['namespaces'],
+            ['emptyLines'],
+            ['importsOrder'],
+            ['blankLineBeforeStatement'],
+            ['braces'],
+            ['stringVariables'],
+            ['lowercaseKeywords'],
+            ['noMultilineWhitespaceAroundDoubleArrow'],
+            ['compactArray'],
+            ['classesImport'],
+            ['namedParameters'],
+            ['spacesInsideParentheses'],
+            ['orderedClassElements'],
             ["namedParameters"],
         ];
     }
@@ -48,23 +48,23 @@ class CommonRulesetTest extends CodestyleTestCase
     public static function providePhp81Fixtures(): array
     {
         return [
-            ["enums"],
-            ["readonlies"],
+            ['enums'],
+            ['readonlies'],
         ];
     }
 
     public static function providePhp82Fixtures(): array
     {
         return [
-            ["php82"],
+            ['php82'],
         ];
     }
 
     /**
      * @throws Exception
      */
-    #[DataProvider("providePhp80Fixtures")]
-    #[RequiresPhp(">= 8.0")]
+    #[DataProvider('providePhp80Fixtures')]
+    #[RequiresPhp('>= 8.0')]
     public function testPhp80Fixtures(string $name): void
     {
         $this->testFixture($name);
@@ -73,8 +73,8 @@ class CommonRulesetTest extends CodestyleTestCase
     /**
      * @throws Exception
      */
-    #[DataProvider("providePhp81Fixtures")]
-    #[RequiresPhp(">= 8.1")]
+    #[DataProvider('providePhp81Fixtures')]
+    #[RequiresPhp('>= 8.1')]
     public function testPhp81Fixtures(string $name): void
     {
         $this->testFixture($name);
@@ -83,8 +83,8 @@ class CommonRulesetTest extends CodestyleTestCase
     /**
      * @throws Exception
      */
-    #[DataProvider("providePhp82Fixtures")]
-    #[RequiresPhp(">= 8.2")]
+    #[DataProvider('providePhp82Fixtures')]
+    #[RequiresPhp('>= 8.2')]
     public function testPhp82Fixtures(string $name): void
     {
         $this->testFixture($name);

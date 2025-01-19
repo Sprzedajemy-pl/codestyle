@@ -51,7 +51,7 @@ abstract class CodestyleTestCase extends TestCase
      */
     protected function runFixer(bool $fix = false): bool
     {
-        $dryRun = $fix ? "" : "--dry-run";
+        $dryRun = $fix ? '' : '--dry-run';
 
         $application = new Application();
         $application->setAutoExit(false);
@@ -65,7 +65,7 @@ abstract class CodestyleTestCase extends TestCase
 
     protected function clearTempDirectory(): void
     {
-        $files = glob(__DIR__ . "/tmp/*.php");
+        $files = glob(__DIR__ . '/tmp/*.php');
 
         foreach ($files as $file) {
             unlink($file);
@@ -74,6 +74,6 @@ abstract class CodestyleTestCase extends TestCase
 
     protected function getConfigPath(): string
     {
-        return "./tests/codestyle/config/config.php";
+        return './tests/codestyle/config/config.php';
     }
 }

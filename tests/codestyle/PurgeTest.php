@@ -15,8 +15,8 @@ class PurgeTest extends CodestyleTestCase
      */
     public function testPhp82PurgeMode(): void
     {
-        $this->config = "./tests/codestyle/config/config.purge.php";
-        $this->testFixture("noComments");
+        $this->config = './tests/codestyle/config/config.purge.php';
+        $this->testFixture('noComments');
     }
 
     /**
@@ -24,8 +24,8 @@ class PurgeTest extends CodestyleTestCase
      */
     public function testPhp82PurgeWithoutDocCommentsTest(): void
     {
-        $this->config = "./tests/codestyle/config/config.purge.without.doc.comments.php";
-        $this->testFixture("noCommentsWithoutDocComments");
+        $this->config = './tests/codestyle/config/config.purge.without.doc.comments.php';
+        $this->testFixture('noCommentsWithoutDocComments');
     }
 
     protected function getConfigPath(): string

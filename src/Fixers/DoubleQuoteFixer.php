@@ -21,7 +21,7 @@ $a = 'sample';
 EOF;
 
         return new FixerDefinition(
-            "Convert single quotes to double quotes for simple strings.",
+            'Convert single quotes to double quotes for simple strings.',
             [
                 new CodeSample($codeSample),
             ],
@@ -47,7 +47,7 @@ EOF;
 
     public function getName(): string
     {
-        return "Blumilk/double_quote";
+        return 'Blumilk/double_quote';
     }
 
     public function getPriority(): int
@@ -68,7 +68,7 @@ EOF;
             }
 
             $content = $token->getContent();
-            $prefix = "";
+            $prefix = '';
 
             if (
                 $content[0] === "'" &&
@@ -78,7 +78,7 @@ EOF;
             ) {
                 $content = substr($content, 1, -1);
                 $content = str_replace("\\'", "'", $content);
-                $content = str_replace("$", "$", $content);
+                $content = str_replace('$', '$', $content);
 
                 $tokens[$index] = new Token([T_CONSTANT_ENCAPSED_STRING, $prefix . '"' . $content . '"']);
             }

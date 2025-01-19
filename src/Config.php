@@ -24,7 +24,7 @@ use PhpCsFixerCustomFixers\Fixers as PhpCsFixerCustomFixers;
 
 class Config
 {
-    protected const IGNORE_TAG = "php-cs-fixer:ignore-file";
+    protected const IGNORE_TAG = 'php-cs-fixer:ignore-file';
 
     protected Paths $paths;
     protected Rules $rules;
@@ -47,12 +47,12 @@ class Config
 
     public function config(): PhpCsFixerConfig
     {
-        list("paths" => $paths, "rules" => $rules) = $this->options();
+        list('paths' => $paths, 'rules' => $rules) = $this->options();
 
         $files = [];
 
         foreach ($paths as $path) {
-            $directory = $this->rootPath . "/" . $path;
+            $directory = $this->rootPath . '/' . $path;
             $this->getAllFiles($files, $directory);
         }
 
@@ -61,7 +61,7 @@ class Config
             : $files;
 
         $finder = Finder::create()->directories()->append($filteredFiles);
-        $config = new PhpCsFixerConfig("Blumilk codestyle standard");
+        $config = new PhpCsFixerConfig('Blumilk codestyle standard');
 
         $config = $config->setFinder($finder)
             ->setUsingCache($this->withCache)
@@ -77,18 +77,18 @@ class Config
         return $config;
     }
 
-    #[ArrayShape(["paths" => "array", "rules" => "array"])]
+    #[ArrayShape(['paths' => 'array', 'rules' => 'array'])]
     public function options(): array
     {
         return [
-            "paths" => $this->paths->get(),
-            "rules" => $this->rules->get(),
+            'paths' => $this->paths->get(),
+            'rules' => $this->rules->get(),
         ];
     }
 
     public function purgeMode(bool $purgeDocComments = true): static
     {
-        $this->rules->add(new Rule(NoCommentFixer::class, ["doc_comment" => $purgeDocComments]));
+        $this->rules->add(new Rule(NoCommentFixer::class, ['doc_comment' => $purgeDocComments]));
 
         return $this;
     }
@@ -153,17 +153,17 @@ class Config
     protected function getAllFiles(array &$paths, string $path): void
     {
         if (is_file($path) || !is_dir($path)) {
-            if (str_ends_with($path, ".php")) {
+            if (str_ends_with($path, '.php')) {
                 $paths[] = $path;
             }
 
             return;
         }
 
-        $files = array_diff(scandir($path), [".", ".."]);
+        $files = array_diff(scandir($path), ['.', '..']);
 
         foreach ($files as $file) {
-            $directory = $path . "/" . $file;
+            $directory = $path . '/' . $file;
             $this->getAllFiles($paths, $directory);
         }
     }

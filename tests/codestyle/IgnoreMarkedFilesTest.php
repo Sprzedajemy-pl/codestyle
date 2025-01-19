@@ -13,12 +13,12 @@ class IgnoreMarkedFilesTest extends CodestyleTestCase
      */
     public function testIgnoreMarkedFiles(): void
     {
-        $this->testFixture("ignoreMarkedFiles");
+        $this->testFixture('ignoreMarkedFiles');
     }
 
     protected function getConfigPath(): string
     {
-        return "./tests/codestyle/config/config.ignoreMarkedFiles.php";
+        return './tests/codestyle/config/config.ignoreMarkedFiles.php';
     }
 
     /**

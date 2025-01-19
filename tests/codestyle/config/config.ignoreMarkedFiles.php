@@ -7,7 +7,7 @@ use Blumilk\Codestyle\Configuration\Defaults\CommonRules;
 use Blumilk\Codestyle\Configuration\Defaults\Paths;
 use PhpCsFixer\Fixer\Basic\PsrAutoloadingFixer;
 
-$paths = new Paths("tests/codestyle/tmp");
+$paths = new Paths('tests/codestyle/tmp');
 $rules = new CommonRules();
 
 $config = new Config(

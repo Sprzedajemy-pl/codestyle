@@ -24,8 +24,8 @@ final class NoCommentFixer extends AbstractFixer implements ConfigurableFixerInt
     public function createConfigurationDefinition(): FixerConfigurationResolver
     {
         return new FixerConfigurationResolver([
-            (new FixerOptionBuilder("doc_comment", "Docblock comments should be removed."))
-                ->setAllowedTypes(["bool"])
+            (new FixerOptionBuilder('doc_comment', 'Docblock comments should be removed.'))
+                ->setAllowedTypes(['bool'])
                 ->setDefault(false)
                 ->getOption(),
         ]);
@@ -50,7 +50,7 @@ class Migration
 EOF;
 
         return new FixerDefinition(
-            "There can be no comments.",
+            'There can be no comments.',
             [
                 new CodeSample($codeSample),
             ],
@@ -59,7 +59,7 @@ EOF;
 
     public function getName(): string
     {
-        return "Blumilk/no_comments";
+        return 'Blumilk/no_comments';
     }
 
     public function getPriority(): int
@@ -87,7 +87,7 @@ EOF;
     public function applyFix(SplFileInfo $file, Tokens $tokens): void
     {
         for ($index = $tokens->count() - 1; $index > 0; $index--) {
-            if (!$tokens[$index]->isGivenKind($this->configuration["doc_comment"] ? [T_COMMENT, T_DOC_COMMENT] : [T_COMMENT])) {
+            if (!$tokens[$index]->isGivenKind($this->configuration['doc_comment'] ? [T_COMMENT, T_DOC_COMMENT] : [T_COMMENT])) {
                 continue;
             }
 

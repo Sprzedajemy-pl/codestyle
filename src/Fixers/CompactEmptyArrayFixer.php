@@ -18,7 +18,7 @@ final class CompactEmptyArrayFixer implements FixerInterface
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
-            "Ensures that empty arrays are declared using compact syntax.",
+            'Ensures that empty arrays are declared using compact syntax.',
             [new CodeSample("<?php\n\$array = [\n];\n")],
         );
     }
@@ -70,7 +70,7 @@ final class CompactEmptyArrayFixer implements FixerInterface
 
     public function getName(): string
     {
-        return "Blumilk/compact_empty_array";
+        return 'Blumilk/compact_empty_array';
     }
 
     public function getPriority(): int

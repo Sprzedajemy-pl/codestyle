@@ -52,7 +52,7 @@ return new class extends Migration
 EOF;
 
         return new FixerDefinition(
-            "There can be no comments generated in Laravel migrations stub.",
+            'There can be no comments generated in Laravel migrations stub.',
             [
                 new CodeSample($codeSample),
             ],
@@ -61,7 +61,7 @@ EOF;
 
     public function getName(): string
     {
-        return "Blumilk/no_laravel_migrations_generated_comments";
+        return 'Blumilk/no_laravel_migrations_generated_comments';
     }
 
     public function getPriority(): int
@@ -94,8 +94,8 @@ EOF;
             }
 
             if (
-                !str_contains($tokens[$index]->getContent(), "Run the migrations.")
-                && !str_contains($tokens[$index]->getContent(), "Reverse the migrations.")
+                !str_contains($tokens[$index]->getContent(), 'Run the migrations.')
+                && !str_contains($tokens[$index]->getContent(), 'Reverse the migrations.')
             ) {
                 continue;
             }

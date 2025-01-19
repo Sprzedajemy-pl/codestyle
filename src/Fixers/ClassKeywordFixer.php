@@ -18,7 +18,7 @@ final class ClassKeywordFixer implements FixerInterface
     public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
-            "Converts FQCN strings to `*::class` keywords.",
+            'Converts FQCN strings to `*::class` keywords.',
             [
                 new CodeSample(
                     '<?php
@@ -29,8 +29,8 @@ $baz = "\Exception";
 ',
                 ),
             ],
-            "This rule does not have an understanding of whether a class exists in the scope of the codebase or not, relying on run-time and autoloaded classes to determine it, which makes the rule useless when running on a single file out of codebase context.",
-            "Do not use it, unless you know what you are doing.",
+            'This rule does not have an understanding of whether a class exists in the scope of the codebase or not, relying on run-time and autoloaded classes to determine it, which makes the rule useless when running on a single file out of codebase context.',
+            'Do not use it, unless you know what you are doing.',
         );
     }
 
@@ -49,10 +49,10 @@ $baz = "\Exception";
         for ($index = $tokens->count() - 1; $index >= 0; --$index) {
             $token = $tokens[$index];
 
-            if ($token->isGivenKind(T_CONSTANT_ENCAPSED_STRING) && (strpos($token->getContent(), "\\") !== false)) {
+            if ($token->isGivenKind(T_CONSTANT_ENCAPSED_STRING) && (strpos($token->getContent(), '\\') !== false)) {
                 $name = substr($token->getContent(), 1, -1);
-                $name = ltrim($name, "\\");
-                $name = str_replace("\\\\", "\\", $name);
+                $name = ltrim($name, '\\');
+                $name = str_replace('\\\\', '\\', $name);
 
                 if ($this->exists($name)) {
                     $substitution = Tokens::fromCode("<?php echo \\{$name}::class;");
@@ -69,7 +69,7 @@ $baz = "\Exception";
 
     public function getName(): string
     {
-        return "Blumilk/class_keyword_fixer";
+        return 'Blumilk/class_keyword_fixer';
     }
 
     public function getPriority(): int

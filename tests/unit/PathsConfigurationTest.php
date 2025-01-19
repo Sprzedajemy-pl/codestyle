@@ -13,38 +13,38 @@ class PathsConfigurationTest extends TestCase
         $paths = new Paths();
         $config = new Config(paths: $paths);
 
-        $this->assertSame([], $config->options()["paths"]);
+        $this->assertSame([], $config->options()['paths']);
     }
 
     public function testPathsCustomizedByConstructorConfiguration(): void
     {
-        $paths = new Paths("src", "tests");
+        $paths = new Paths('src', 'tests');
         $config = new Config(paths: $paths);
 
-        $this->assertSame(["src", "tests"], $config->options()["paths"]);
+        $this->assertSame(['src', 'tests'], $config->options()['paths']);
     }
 
     public function testPathsCustomizedByMethodsConfiguration(): void
     {
         $paths = new Paths();
-        $config = new Config(paths: $paths->add("src", "tests"));
+        $config = new Config(paths: $paths->add('src', 'tests'));
 
-        $this->assertSame(["src", "tests"], $config->options()["paths"]);
+        $this->assertSame(['src', 'tests'], $config->options()['paths']);
     }
 
     public function testRepeatedPathsConfiguration(): void
     {
-        $paths = new Paths("src");
-        $config = new Config(paths: $paths->add("src"));
+        $paths = new Paths('src');
+        $config = new Config(paths: $paths->add('src'));
 
-        $this->assertSame(["src"], $config->options()["paths"]);
+        $this->assertSame(['src'], $config->options()['paths']);
     }
 
     public function testFilteringNonExistingPathsConfiguration(): void
     {
-        $paths = new Paths("src");
-        $config = new Config(paths: $paths->filter("tests"));
+        $paths = new Paths('src');
+        $config = new Config(paths: $paths->filter('tests'));
 
-        $this->assertSame(["src"], $config->options()["paths"]);
+        $this->assertSame(['src'], $config->options()['paths']);
     }
 }
