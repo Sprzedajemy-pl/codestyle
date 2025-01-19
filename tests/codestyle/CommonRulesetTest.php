@@ -41,6 +41,7 @@ class CommonRulesetTest extends CodestyleTestCase
             ["namedParameters"],
             ["spacesInsideParentheses"],
             ["orderedClassElements"],
+            ["namedParameters"],
         ];
     }
 

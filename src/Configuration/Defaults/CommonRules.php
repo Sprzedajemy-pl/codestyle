@@ -344,5 +344,5 @@ class CommonRules extends Rules
         ClassKeywordFixer::class => true,
         NamedArgumentFixer::class => true,
         NoBlankLinesAfterPhpdocFixer::class => true,
-   ];
+    ];
 }
